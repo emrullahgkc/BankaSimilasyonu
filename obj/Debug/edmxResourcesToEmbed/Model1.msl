@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BankaHesabModelStoreContainer" CdmEntityContainer="BankaHesabEntitiess">
+    <EntitySetMapping Name="tbl_Banka">
+      <EntityTypeMapping TypeName="BankaHesabModel.tbl_Banka">
+        <MappingFragment StoreEntitySet="tbl_Banka">
+          <ScalarProperty Name="bankakod" ColumnName="bankakod" />
+          <ScalarProperty Name="bankaad" ColumnName="bankaad" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_kul_bnk">
+      <EntityTypeMapping TypeName="BankaHesabModel.tbl_kul_bnk">
+        <MappingFragment StoreEntitySet="tbl_kul_bnk">
+          <ScalarProperty Name="hesapno" ColumnName="hesapno" />
+          <ScalarProperty Name="iban" ColumnName="iban" />
+          <ScalarProperty Name="bankaid" ColumnName="bankaid" />
+          <ScalarProperty Name="kullaniciid" ColumnName="kullaniciid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_kullanici">
+      <EntityTypeMapping TypeName="BankaHesabModel.tbl_kullanici">
+        <MappingFragment StoreEntitySet="tbl_kullanici">
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="tc" ColumnName="tc" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_kullanicihareket">
+      <EntityTypeMapping TypeName="BankaHesabModel.tbl_kullanicihareket">
+        <MappingFragment StoreEntitySet="tbl_kullanicihareket">
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="gon_bnkid" ColumnName="gon_bnkid" />
+          <ScalarProperty Name="gon_klncid" ColumnName="gon_klncid" />
+          <ScalarProperty Name="miktar" ColumnName="miktar" />
+          <ScalarProperty Name="harekettur" ColumnName="harekettur" />
+          <ScalarProperty Name="alici_bnkid" ColumnName="alici_bnkid" />
+          <ScalarProperty Name="alici_klnciid" ColumnName="alici_klnciid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

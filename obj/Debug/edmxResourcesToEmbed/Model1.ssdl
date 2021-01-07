@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BankaHesabModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Banka">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bankaad" Type="varchar" MaxLength="50" />
+    <Property Name="bankakod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tbl_kul_bnk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullaniciid" Type="tinyint" />
+    <Property Name="bankaid" Type="tinyint" />
+    <Property Name="iban" Type="char" MaxLength="7" />
+    <Property Name="hesapno" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="tbl_kullanici">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad" Type="varchar" MaxLength="20" />
+    <Property Name="soyad" Type="varchar" MaxLength="20" />
+    <Property Name="tc" Type="varchar" MaxLength="11" />
+    <Property Name="telefon" Type="varchar" MaxLength="15" />
+    <Property Name="sifre" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tbl_kullanicihareket">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="alici_klnciid" Type="tinyint" />
+    <Property Name="alici_bnkid" Type="tinyint" />
+    <Property Name="harekettur" Type="varchar" MaxLength="5" />
+    <Property Name="miktar" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="gon_klncid" Type="tinyint" />
+    <Property Name="gon_bnkid" Type="tinyint" />
+    <Property Name="tarih" Type="smalldatetime" />
+  </EntityType>
+  <Association Name="FK_tbl_kul_bnk_tbl_Banka">
+    <End Role="tbl_Banka" Type="Self.tbl_Banka" Multiplicity="0..1" />
+    <End Role="tbl_kul_bnk" Type="Self.tbl_kul_bnk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Banka">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_kul_bnk">
+        <PropertyRef Name="bankaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_kul_bnk_tlb_kullanici">
+    <End Role="tbl_kullanici" Type="Self.tbl_kullanici" Multiplicity="0..1" />
+    <End Role="tbl_kul_bnk" Type="Self.tbl_kul_bnk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_kullanici">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_kul_bnk">
+        <PropertyRef Name="kullaniciid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_kullanicihareket_tbl_kul_bnk2">
+    <End Role="tbl_kul_bnk" Type="Self.tbl_kul_bnk" Multiplicity="0..1" />
+    <End Role="tbl_kullanicihareket" Type="Self.tbl_kullanicihareket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_kul_bnk">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_kullanicihareket">
+        <PropertyRef Name="gon_bnkid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_kullanicihareket_tbl_kullanici">
+    <End Role="tbl_kullanici" Type="Self.tbl_kullanici" Multiplicity="0..1" />
+    <End Role="tbl_kullanicihareket" Type="Self.tbl_kullanicihareket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_kullanici">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_kullanicihareket">
+        <PropertyRef Name="gon_klncid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_kullanicihareket_tlb_kullanici">
+    <End Role="tbl_kullanici" Type="Self.tbl_kullanici" Multiplicity="0..1" />
+    <End Role="tbl_kullanicihareket" Type="Self.tbl_kullanicihareket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_kullanici">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_kullanicihareket">
+        <PropertyRef Name="alici_klnciid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BankaHesabModelStoreContainer">
+    <EntitySet Name="tbl_Banka" EntityType="Self.tbl_Banka" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_kul_bnk" EntityType="Self.tbl_kul_bnk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_kullanici" EntityType="Self.tbl_kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_kullanicihareket" EntityType="Self.tbl_kullanicihareket" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_kul_bnk_tbl_Banka" Association="Self.FK_tbl_kul_bnk_tbl_Banka">
+      <End Role="tbl_Banka" EntitySet="tbl_Banka" />
+      <End Role="tbl_kul_bnk" EntitySet="tbl_kul_bnk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_kul_bnk_tlb_kullanici" Association="Self.FK_tbl_kul_bnk_tlb_kullanici">
+      <End Role="tbl_kullanici" EntitySet="tbl_kullanici" />
+      <End Role="tbl_kul_bnk" EntitySet="tbl_kul_bnk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_kullanicihareket_tbl_kul_bnk2" Association="Self.FK_tbl_kullanicihareket_tbl_kul_bnk2">
+      <End Role="tbl_kul_bnk" EntitySet="tbl_kul_bnk" />
+      <End Role="tbl_kullanicihareket" EntitySet="tbl_kullanicihareket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_kullanicihareket_tbl_kullanici" Association="Self.FK_tbl_kullanicihareket_tbl_kullanici">
+      <End Role="tbl_kullanici" EntitySet="tbl_kullanici" />
+      <End Role="tbl_kullanicihareket" EntitySet="tbl_kullanicihareket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_kullanicihareket_tlb_kullanici" Association="Self.FK_tbl_kullanicihareket_tlb_kullanici">
+      <End Role="tbl_kullanici" EntitySet="tbl_kullanici" />
+      <End Role="tbl_kullanicihareket" EntitySet="tbl_kullanicihareket" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

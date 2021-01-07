@@ -1,0 +1,17 @@
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\bin\Debug\BankaHesabi.exe.config
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\bin\Debug\BankaHesabi.exe
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\bin\Debug\BankaHesabi.pdb
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\bin\Debug\EntityFramework.dll
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\bin\Debug\EntityFramework.xml
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\obj\Debug\BankaHesabi.addregister.resources
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\obj\Debug\BankaHesabi.Form1.resources
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\obj\Debug\BankaHesabi.Frm_userdetail.resources
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\obj\Debug\BankaHesabi.Properties.Resources.resources
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\obj\Debug\BankaHesabi.csproj.GenerateResource.cache
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\obj\Debug\BankaHesabi.csproj.CoreCompileInputs.cache
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\obj\Debug\BankaHesabi.csproj.CopyComplete
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\obj\Debug\BankaHesabi.exe
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\obj\Debug\BankaHesabi.pdb
+C:\Users\EmrullaH\source\repos\BankaHesabi\BankaHesabi\obj\Debug\BankaHesabi.csprojAssemblyReference.cache
